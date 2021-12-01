@@ -13,15 +13,12 @@ from typing import Iterable
 
 def get_increases(lines: Iterable, window_size: int = 1) -> int:
     num_increases = 0
-    prev = list(map(int, itertools.islice(lines, window_size)))
-    prev_sum = sum(prev)
+    measurements = list(map(int, itertools.islice(lines, window_size)))
     for depth_measurement in lines:
-        curr = [*prev[1:], int(depth_measurement)]
-        curr_sum = sum(curr)
-        if curr_sum > prev_sum:
+        measurements += [int(depth_measurement)]
+        if measurements[0] < measurements[-1]:
             num_increases += 1
-        prev = curr
-        prev_sum = curr_sum
+        measurements.pop(0)
     return num_increases
 
 
