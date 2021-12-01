@@ -89,3 +89,13 @@ H: 792 (increased)
 In this example, there are `5` sums that are larger than the previous sum.
 
 Consider sums of a three-measurement sliding window. **How many sums are larger than the previous sum?**
+
+## Recap
+
+Part one (`solution_one.py`) is just comparing consecutive items against each other, it was pretty trivial to find a constant memory and O(depth_readings) time solution.
+
+Part two (`solution_two.py`) was pretty easy as well, I knew an easy O(depth_readings) space solution with an O(depth_readings) time solution, and recognized a way to generalize it.
+
+In `solution_general.py` I made a function to handle the general case, holding only with O(window_size) memory usage and O(depth_readings) time. 
+
+All solutions assume a valid input.

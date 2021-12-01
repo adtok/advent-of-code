@@ -8,8 +8,8 @@ input_file = "input.txt"
 num_increases = 0
 
 with open(input_file, "r") as fi:
-    prev = int(fi.readline())
-    for line in fi.readlines():
+    prev = int(next(fi))
+    for line in fi:
         curr = int(line)
         if curr > prev:
             num_increases += 1
