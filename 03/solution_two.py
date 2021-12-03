@@ -7,8 +7,8 @@ tldr: most prevalent bit at a position, paring down as we go
 from typing import List, Tuple
 
 
-def bitchar(boolean: bool) -> str:
-    return "1" if boolean else "0"
+def bitchar(condition: bool) -> str:
+    return "1" if condition else "0"
 
 
 def most_common_bit(lines: List[str], position: int) -> str:

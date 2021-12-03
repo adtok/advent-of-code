@@ -7,8 +7,8 @@ tldr: most prevalent bit
 from collections import defaultdict
 
 
-def bitchar(boolean: bool) -> str:
-    return "1" if boolean else "0"
+def bitchar(condition: bool) -> str:
+    return "1" if condition else "0"
 
 
 def ZERO() -> int:
