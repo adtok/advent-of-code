@@ -1,6 +1,6 @@
 # Advent of Code 2021 Day Two
 
-# Part Two
+## Day 2: Dive!
 
 Now, you need to figure out how to pilot this thing.
 
