@@ -1,4 +1,4 @@
-# Advent of Code 2021 Day Two
+# Advent of Code 2021: Day Two
 
 ## Day 2: Dive!
 
