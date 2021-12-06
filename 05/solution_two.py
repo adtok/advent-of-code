@@ -21,19 +21,18 @@ def solve(input_file: str) -> int:
         for line in file:
             x1, y1, x2, y2 = parse_line(line)
 
-            if x1 == x2 or y1 == y2: # Line is horizontal
+            if x1 == x2 or y1 == y2:  # Line is horizontal
                 for x in range(min(x1, x2), max(x1, x2) + 1):
                     for y in range(min(y1, y2), max(y1, y2) + 1):
                         points[(x, y)] += 1
-            
-            else: # Line is diagonal
+
+            else:  # Line is diagonal
                 if x1 > x2:
                     x1, y1, x2, y2 = x2, y2, x1, y1
                 for x in range(x1, x2 + 1):
                     sign = 1 if y2 > y1 else -1
                     y = y1 + (x - x1) * sign
                     points[(x, y)] += 1
-            
 
     result = sum(count > 1 for count in points.values())
     print(f"The answer for {input_file!r} is {result}.")
