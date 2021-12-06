@@ -1,6 +1,6 @@
 """
 Advent of Code 2021: Day 04 Part 2
-tldr: Bingo, but you wan to lose
+tldr: Bingo, but you want to lose
 """
 
 
