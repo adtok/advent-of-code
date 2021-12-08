@@ -57,13 +57,17 @@ def get_repeats(codes: List[str], uniques: Dict[str, int]) -> Dict[str, int]:
     return result
 
 
-def solve_line(line: str) -> int:
-    patterns, output = parse_line(line)
-    codes = [*patterns, *output]
+def generate_master_key(*codes: List[str]) -> Dict[str, int]:
     uniques = get_uniques(codes)
     assert len(uniques) == 4, "This approach will not work for this input."
     repeats = get_repeats(codes, uniques)
-    master_key = {**uniques, **repeats}
+    result = {**uniques, **repeats}
+    return result
+
+
+def solve_line(line: str) -> int:
+    patterns, output = parse_line(line)
+    master_key = generate_master_key(*patterns, *output)
     string = "".join(map(str, map(master_key.get, output)))
     result = int(string)
     return result
