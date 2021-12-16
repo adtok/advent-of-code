@@ -73,6 +73,7 @@ class OperatorPacket(Packet):
             assert len(self.packets) == 2
             p1, p2 = self.packets
             return int(p1.value == p2.value)
+        raise ValueError(f"Packet type {self.type_id} not supported.")
 
 
 def hex_to_binary(value: str) -> str:
